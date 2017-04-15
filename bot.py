@@ -8,9 +8,9 @@ already_done = []
 post_lim = 25
 
 def alert_nock(post):
-    msg = 'minivan related thread: %s' % post.short_link
+    msg = 'minivan related thread: %s' % post.shortlink
     print('alerting nock with message: %s' % msg)
-    r.send_message('thebeano77', 'minivan related thread', msg)
+    r.redditor('thebeano77').message('minivan related thread', msg)
 
 while True:
     # try:
