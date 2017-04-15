@@ -13,14 +13,14 @@ def alert_nock(post):
     r.redditor('thebeano77').message('minivan related thread', msg)
 
 while True:
-    # try:
+    try:
         subreddit = r.subreddit('mechmarket')
         for post in subreddit.new(limit=25):
             if post.id not in already_done and ('minivan' in post.title or 'minivan' in post.selftext):
                 alert_nock(post)
                 already_done.append(post.id)
-    # except Exception as err:
-    #     print('exception when connecting to reddit: {0}'.format(err))
+    except Exception as err:
+        print('exception when connecting to reddit: {0}'.format(err))
 
-        post_lim = 10
-        time.sleep(60000)
+    post_lim = 10
+    time.sleep(60000)
