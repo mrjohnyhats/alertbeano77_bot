@@ -13,6 +13,7 @@ def alert_nock(post):
     r.redditor('thebeano77').message('minivan related thread', msg)
 
 while True:
+    print('checking for minivan related threads')
     try:
         subreddit = r.subreddit('mechmarket')
         for post in subreddit.new(limit=25):
@@ -23,4 +24,4 @@ while True:
         print('exception when connecting to reddit: {0}'.format(err))
 
     post_lim = 10
-    time.sleep(60000)
+    time.sleep(6)
