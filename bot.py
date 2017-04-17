@@ -17,7 +17,7 @@ while True:
     try:
         subreddit = r.subreddit('mechmarket')
         for post in subreddit.new(limit=25):
-            if post.id not in already_done and ('minivan' in post.title or 'minivan' in post.selftext):
+            if post.id not in already_done and ('minivan' in post.title.lower() or 'minivan' in post.selftext.lower()):
                 alert_nock(post)
                 already_done.append(post.id)
     except Exception as err:
